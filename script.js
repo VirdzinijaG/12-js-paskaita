@@ -38,6 +38,13 @@ function Zmogus(vardas, pavarde, metai, asmensKodas) { // () perduodami kintamie
 
 }
 
+Zmogus.gyvenamojiVieta = "Lietuva" // konstruktoriaus taip papildyti neiseina
+Zmogus.prototype.gyvenamojiVieta = "Lietuva" // konstruktoriaus pildymas pasinaudojant prototipu. Prototipas savyve
+
+Zmogus.prototype.gimimoMetai = function() {
+    return this.metai
+}
+
 let zmogus1 = new Zmogus("Vardenis", "Pavardenis", "1800", "21326365") // naudojamas sablonas 
 
 // zmogus1 apibudinmas pridedamas i objekta
@@ -61,3 +68,7 @@ zmogus2.pakeisk('Jonas Petras');
 
 console.log(zmogus1);
 console.log(zmogus2);
+console.log(zmogus1.gyvenamojiVieta); // pridetas elemetas su prototype
+console.log(zmogus2.gyvenamojiVieta);
+console.log(zmogus1.gimimoMetai());
+console.log(zmogus2.gimimoMetai());
